@@ -1,0 +1,19 @@
+name: My First CI
+
+on:
+  push:
+  pull_request:
+
+jobs:
+  check-readme:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Check README exists
+        run: test -f README.md
+
+      - name: Print success message
+        run: echo "CI check passed!"
