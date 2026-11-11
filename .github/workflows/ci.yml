@@ -13,7 +13,7 @@ jobs:
         uses: actions/checkout@v4
 
       - name: Check README exists
-        run: test -f README.md
+        run: test -f file-does-not-exist.txt
 
       - name: Print success message
         run: echo "CI check passed!"
