@@ -1,7 +1,6 @@
 name: My First CI
 
 on:
-  push:
   pull_request:
 
 jobs:
@@ -17,3 +16,16 @@ jobs:
 
       - name: Print success message
         run: echo "CI check passed!"
+
+  check-environment:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Show operating system
+        run: uname -a
+
+      - name: Check Python version
+        run: python --version
+
+      - name: Print environment message
+        run: echo "Environment check passed!"
